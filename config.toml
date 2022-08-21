@@ -1,7 +1,7 @@
 baseURL = "http://obrepalski.com/"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "LoveIt"
+theme = "loveit"
 
 # website title
 title = "Paweł Obrępalski"
