@@ -4,7 +4,7 @@ baseURL = "https://obrepalski.com/"
 theme = "LoveIt"
 
 # website title
-title = "Paweł Obrępalski"
+title = "My New Hugo Site"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -13,9 +13,9 @@ languageName = "English"
 
 # Author config
 [author]
-  name = "Paweł Obrępalski"
-  email = "pawel@obrepalski.com"
-  link = "obrepalski.com"
+  name = "xxxx"
+  email = ""
+  link = ""
 
 # Menu config
 [menu]
@@ -53,4 +53,3 @@ languageName = "English"
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
-
