@@ -1,0 +1,6 @@
+colorScheme = "forest"
+
+[homepage]
+layout = 'profile'
+showRecent = true
+
