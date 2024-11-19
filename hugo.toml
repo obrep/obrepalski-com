@@ -30,7 +30,7 @@ priority = 0.5
 
 [params.author]
     name = "Paweł Obrępalski"
-    headline = "Blog with my thoughts and experiences"
+    headline = "Staff Engineer @ShareChat AI"
     bio = "Staff Engineer @ShareChat AI"
     image = "img/avatar.png"
     links = [
