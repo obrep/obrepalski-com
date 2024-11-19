@@ -9,6 +9,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://obrepalski.com/about/</loc>
+    <lastmod>2024-11-18T22:15:22+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://obrepalski.com/posts/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
