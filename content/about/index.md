@@ -25,7 +25,7 @@ Hi! 👋
 
 I’m Paweł, an experienced software engineer with a solid foundation in machine learning and research background. I specialise in designing and implementing backend ML systems, cloud infrastructure, and scalable solutions.
 
-My journey began in aerospace research, where I worked on flight simulators and computational fluid dynamics.. My bachelor's thesis on turbulence simulation was a turning point for me, as I was able to run my calculations on one of the most powerful supercomputers of the time. I immediately got hooked on programming and large-scale systems, which is what I’ve been working on ever since.
+My journey began in aerospace research, where I worked on flight simulators and computational fluid dynamics. My bachelor's thesis on turbulence simulation was a turning point for me, as I was able to run my calculations on one of the most powerful supercomputers of the time. I immediately got hooked on programming and large-scale systems, which is what I’ve been working on ever since.
 
 Over the past few years, I’ve been working on large-scale Recommendation Systems—initially at ByteDance and currently at ShareChat. I’m leading the delivery team that handles the process of providing feed recommendations and balancing different content types.
 
