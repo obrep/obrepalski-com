@@ -1,8 +1,8 @@
 +++
 date = '2024-11-18'
 title = 'Why Care About Cost as Software Engineer?'
-#tags = ["series", "docs"]
-#series =  ["Optimising Cloud Services At Scale"]
+tags = ["series", "docs"]
+series =  ["Optimising Cloud Services At Scale"]
 series_order =  1
 +++
 

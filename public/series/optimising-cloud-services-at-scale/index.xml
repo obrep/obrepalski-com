@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Optimising Cloud Services at Scale on </title>
-    <link>http://localhost:1313/series/optimising-cloud-services-at-scale/</link>
+    <link>https://obrepalski.com/series/optimising-cloud-services-at-scale/</link>
     <description>Recent content in Optimising Cloud Services at Scale on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 Paweł Obrępalski</copyright>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/optimising-cloud-services-at-scale/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 Paweł Obrępalski</copyright>
+    <lastBuildDate>Mon, 18 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://obrepalski.com/series/optimising-cloud-services-at-scale/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Optimising Cloud Services At Scale</title>
-      <link>http://localhost:1313/posts/optimising-part1/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <title>Why Care About Cost as Software Engineer?</title>
+      <link>https://obrepalski.com/posts/why-care-about-cost/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/optimising-part1/</guid>
+      <guid>https://obrepalski.com/posts/why-care-about-cost/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>Why Care About Cost as Software Engineer?</title>
-      <link>http://localhost:1313/posts/why-care-about-cost/</link>
-      <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
+      <title>Cost Observability and Guardrails</title>
+      <link>https://obrepalski.com/posts/optimising-intro/</link>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/why-care-about-cost/</guid>
+      <guid>https://obrepalski.com/posts/optimising-intro/</guid>
       <description></description>
       
     </item>

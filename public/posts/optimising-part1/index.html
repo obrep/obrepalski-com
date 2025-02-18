@@ -103,7 +103,7 @@
     "keywords": ["series","docs"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1190"
+    "wordCount": "1351"
   }]
   </script>
 
@@ -187,7 +187,7 @@
             
   <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="">
+    <p class="text-base font-medium" title="Posts">
         Blog
     </p>
 </a>
@@ -198,7 +198,7 @@
             
   <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="">
+    <p class="text-base font-medium" title="About">
         About
     </p>
 </a>
@@ -342,7 +342,7 @@
   <li class="mt-1">
     <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="">
+        <p class="text-bg font-bg" title="Posts">
             Blog
         </p>
     </a>
@@ -357,7 +357,7 @@
   <li class="mt-1">
     <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="">
+        <p class="text-bg font-bg" title="About">
             About
         </p>
     </a>
@@ -438,7 +438,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-11-17T00:00:00&#43;00:00">17 November 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1190 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+  <time datetime="2024-11-17T00:00:00&#43;00:00">17 November 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1351 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
   
 
   
@@ -615,7 +615,7 @@
     </span>        
     
 </h1>
-<p>This article series is a guide to optimising your Cloud services at scale. While parts of it will be specific to technologies I&rsquo;m using daily (Go, GCP), most of the practices here will be universal for most of the services running on Kubernetes, which has become the de facto standard for large Deployments over the past decade.</p>
+<p>This article series is a guide to optimising your Cloud services at scale. While parts of it will be specific to technologies I&rsquo;m using daily (Go, GCP), most of the practices here will be universal for most of the services running on Kubernetes, which has become the de facto standard for large deployments over the past decade.</p>
 <p>We will start by looking into tools and techniques for optimising the service and in later parts expand the scope to include infrastructure, networking etc.</p>
 <p>Topics covered:</p>
 <ul>
@@ -630,7 +630,8 @@
 <li>Networking optimisations</li>
 <li>Closing thought and my experiences</li>
 </ul>
-<p>When working with microservices at scale, performance optimization becomes crucial for maintaining both system reliability and cost efficiency. While this post covers concepts applicable to any language, the tools and infrastructure discussed focus on Go and Google Cloud Platform, as that&rsquo;s where my experience lies. Most services my team maintains have multiple downstream dependencies, making traditional end-to-end performance testing challenging.</p>
+<p>When working with microservices at scale, performance optimization becomes crucial for maintaining both system reliability and cost efficiency.</p>
+<p>While this post covers concepts applicable to any language, the tools and infrastructure discussed focus on Go and Google Cloud Platform, as that&rsquo;s where my experience lies. Most services my team maintains have multiple downstream dependencies, making traditional end-to-end performance testing challenging.</p>
 
 
 <h2 class="relative group">Why Not Just Load Test? 
@@ -705,13 +706,13 @@
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add debug endpoint for pprof
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add debug endpoint for pprof</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;localhost:6060&#34;</span>, <span style="color:#66d9ef">nil</span>))
 </span></span><span style="display:flex;"><span>    }()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Your service code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Your service code here</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This will expose several profiling endpoints:</p>
 <ul>
 <li><code>/debug/pprof/profile</code> - CPU profile</li>
@@ -762,6 +763,7 @@
 <p><strong>CPU Profiling</strong> captures where programs spend their processing time, identifying hot paths and expensive operations in the code.</p>
 <p><strong>Memory Profiling</strong> reveals memory usage patterns, helping understand heap allocations and garbage collection behavior. This becomes particularly important in Go, where understanding allocation patterns can significantly impact performance.</p>
 <p>Go also provides specialized profiling for goroutines, blocking operations, and mutex contention, though these are typically less frequently used in day-to-day optimization work.</p>
+<p>Great resource to read more about different types of profiling in Go and their limitations: <a href="https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md" target="_blank">https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md</a></p>
 
 
 <h3 class="relative group">Tuning Go&rsquo;s Garbage Collector 
@@ -777,6 +779,7 @@
 <p>Go provides two main knobs for GC tuning:</p>
 <p><strong>GOGC</strong>: Controls the garbage collector&rsquo;s target heap size relative to live heap. The default value of 100 means the heap can grow to 100% larger than the live heap before triggering a collection.</p>
 <p><strong>GOMEMLIMIT</strong> (Go 1.19+): Sets a hard memory limit for the heap. Based on personal experience, disabling GOGC (<code>GOGC=off</code>) and using GOMEMLIMIT alone often provides good results. However, when the live heap approaches the set limit, the application can experience thrashing as the garbage collector works constantly to keep memory usage below the limit. This can lead to significant CPU overhead and reduced performance. Setting GOMEMLIMIT about 20-30% higher than expected peak live heap usage usually provides a good balance.</p>
+<p>For a more in-depth guide on Go&rsquo;s GC, refer to the official documentation.</p>
 
 
 <h3 class="relative group">CPU Management with GOMAXPROCS 
@@ -791,10 +794,35 @@
 </h3>
 <p>GOMAXPROCS controls the number of operating system threads that can execute Go code simultaneously. While Go usually manages this well automatically, there are cases where adjustment helps:</p>
 <ul>
-<li>When running in containerized environments with CPU limits (note that Go will detect the number of cores on the underlying node instead of the container&rsquo;s CPU limit)</li>
-<li>When dealing with heavy I/O operations</li>
-<li>When CPU quotas don&rsquo;t align with available cores</li>
+<li>
+<p>When running in containerized environments with CPU limits (note that Go will detect the number of cores on the underlying node instead of the container&rsquo;s CPU limit)</p>
+</li>
+<li>
+<p>When dealing with heavy I/O operations</p>
+</li>
+<li>
+<p>When CPU quotas don&rsquo;t align with available cores</p>
+</li>
+<li>
+<p>go test -cpuprofile cpu.pprof will run your tests and write a CPU profile to a file named cpu.pprof.</p>
+</li>
+<li>
+<p>pprof.StartCPUProfile(w) captures a CPU profile to w that covers the time span until pprof.StopCPUProfile() is called.</p>
+</li>
+<li>
+<p>import _ &ldquo;net/http/pprof&rdquo; allows you to request a 30s CPU profile by hitting the GET /debug/pprof/profile?seconds=30 endpoint of the default http server that you can start via http.ListenAndServe(&ldquo;localhost:6060&rdquo;, nil)</p>
+</li>
+<li>
+<p>runtime.SetCPUProfileRate() lets you to control the sampling rate of the CPU profiler. See CPU Profiler Limitations for current limitations.</p>
+</li>
+<li>
+<p>runtime.SetCgoTraceback() can be used to get stack traces into cgo code. benesch/cgosymbolizer has an implementation for Linux and macOS.</p>
+</li>
 </ul>
+<p>file, _ := os.Create(&quot;./cpu.pprof&quot;)
+pprof.StartCPUProfile(file)
+defer pprof.StopCPUProfile()</p>
+<p>Check how much of overall CPU time is used before going deeper into specific functions which seem to take huge % of CPU time</p>
 
 
 <h3 class="relative group">Additional Metrics with Prometheus 
@@ -817,14 +845,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">prometheus</span>.<span style="color:#a6e22e">NewRegistry</span>()
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add Go collectors
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">reg</span>.<span style="color:#a6e22e">MustRegister</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add Go collectors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reg</span>.<span style="color:#a6e22e">MustRegister</span>(
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">collectors</span>.<span style="color:#a6e22e">NewGoCollector</span>(),
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">collectors</span>.<span style="color:#a6e22e">NewProcessCollector</span>(<span style="color:#a6e22e">collectors</span>.<span style="color:#a6e22e">ProcessCollectorOpts</span>{}),
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Expose metrics
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/metrics&#34;</span>, <span style="color:#a6e22e">promhttp</span>.<span style="color:#a6e22e">HandlerFor</span>(<span style="color:#a6e22e">reg</span>, <span style="color:#a6e22e">promhttp</span>.<span style="color:#a6e22e">HandlerOpts</span>{}))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Expose metrics</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/metrics&#34;</span>, <span style="color:#a6e22e">promhttp</span>.<span style="color:#a6e22e">HandlerFor</span>(<span style="color:#a6e22e">reg</span>, <span style="color:#a6e22e">promhttp</span>.<span style="color:#a6e22e">HandlerOpts</span>{}))
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>For a complete example of runtime metrics collection, see the <a href="https://github.com/prometheus/client_golang/blob/main/examples/gocollector/main.go" target="_blank">prometheus/client_golang example</a>.</p>
 
@@ -861,8 +889,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">profiler</span>.<span style="color:#a6e22e">Start</span>(<span style="color:#a6e22e">profiler</span>.<span style="color:#a6e22e">Config</span>{
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Service</span>:        <span style="color:#e6db74">&#34;myservice&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ServiceVersion</span>: <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getenv</span>(<span style="color:#e6db74">&#34;BUILD_ID&#34;</span>),  <span style="color:#75715e">// [1]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ServiceVersion</span>: <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getenv</span>(<span style="color:#e6db74">&#34;BUILD_ID&#34;</span>),  <span style="color:#75715e">// [1]</span>
+</span></span><span style="display:flex;"><span>    }); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -984,6 +1012,28 @@
       <div class="flex justify-between pt-3">
         <span>
           
+            <a class="flex group mr-3" href="/posts/optimising-intro/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  ></span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
+                  
+                </span>
+              </span>
+            </a>
+          
         </span>
         <span>
           
@@ -1037,7 +1087,7 @@
     
     <p class="text-sm text-neutral-500 dark:text-neutral-400">
       &copy;
-      2024
+      2025
       Paweł Obrępalski
     </p>
     
