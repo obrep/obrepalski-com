@@ -2,8 +2,8 @@
 date = '2024-11-18'
 title = 'Why Care About Cost as Software Engineer?'
 tags = ["series", "docs"]
-series =  ["Optimising Cloud Services At Scale"]
-series_order =  1
+#series =  ["Optimising Cloud Services At Scale"]
+#series_order =  1
 +++
 
 Cost optimisation has been one of my main focus areas for the past two years, and I’ve heard the same question come up multiple times: “Why should software engineers care about this?” Sure, the obvious answers revolve around maximizing profits and being more cost-effective than the competition. But there are a few less obvious reasons that often get overlooked, and they matter now more than ever. Beyond profits and competitiveness, building cost-conscious systems encourages simplicity and improves long-term maintainability. It also aligns engineers more closely with the broader goals of the business, making their work more impactful.
