@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Why Care About Cost as Software Engineer? &middot; </title>
-  <meta name="title" content="Why Care About Cost as Software Engineer? &middot; " />
+  <title>Cost Observability and Guardrails &middot; </title>
+  <meta name="title" content="Cost Observability and Guardrails &middot; " />
   
   
   <meta name="keywords" content="series, docs, " />
   
   
-  <link rel="canonical" href="https://obrepalski.com/posts/why-care-about-cost/" />
+  <link rel="canonical" href="https://obrepalski.com/posts/optimising-intro/" />
   
   
   
@@ -26,8 +26,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.446a8b9c076e66da0e80c76714e26dd9ec36f07c75a6f91f2ed5b9140c8f48bf53e431c5e426df98e3e593b9b3c6266a60d611aa69cce9f4811297f4d5772c6d.css"
-    integrity="sha512-RGqLnAduZtoOgMdnFOJt2ew28Hx1pvkfLtW5FAyPSL9T5DHF5CbfmOPlk7mzxiZqYNYRqmnM6fSBEpf01XcsbQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.4e2716d77ddb668a7c0d68157cff2048cbdf59d43ac1a9de02fd1a04ed3047a1829f54a8b18c01b94597aac05a30d1933f930e6c59382c3e25501049c92fc230.css"
+    integrity="sha512-TicW133bZop8DWgVfP8gSMvfWdQ6waneAv0aBO0wR6GCn1SosYwBuUWXqsBaMNGTP5MObFk4LD4lUBBJyS/CMA==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -43,12 +43,12 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.b6411b5d4cd56c0068d34c4acbce043846adad56b824e3d486a06d3459aed2eb7f7413874b7871cc2c822c8c8834cbed944022918bcc8cca710a962167c36d32.js"
-    integrity="sha512-tkEbXUzVbABo00xKy84EOEatrVa4JOPUhqBtNFmu0ut/dBOHS3hxzCyCLIyINMvtlEAikYvMjMpxCpYhZ8NtMg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c178288131a2f1ad46910438db47ac5f7e1c48cf949e49f6dc3310c8ec9660e23fe505805eba4e2e73711335808500360d773a2b64322feb35df52856edca286.js"
+    integrity="sha512-wXgogTGi8a1GkQQ420esX34cSM&#43;Unkn23DMQyOyWYOI/5QWAXrpOLnNxEzWAhQA2DXc6K2QyL&#43;s131KFbtyihg==" data-copy="" data-copied=""></script>
   
   
   
-  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
   
   
   
@@ -64,19 +64,20 @@
   
   
   
-  <meta property="og:url" content="https://obrepalski.com/posts/why-care-about-cost/">
-  <meta property="og:title" content="Why Care About Cost as Software Engineer?">
+  <meta property="og:url" content="https://obrepalski.com/posts/optimising-intro/">
+  <meta property="og:title" content="Cost Observability and Guardrails">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-11-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-11-18T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-18T00:00:00+00:00">
     <meta property="article:tag" content="Series">
     <meta property="article:tag" content="Docs">
+      <meta property="og:see_also" content="https://obrepalski.com/posts/why-care-about-cost/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Why Care About Cost as Software Engineer?">
+  <meta name="twitter:title" content="Cost Observability and Guardrails">
 
   
   <script type="application/ld+json">
@@ -84,26 +85,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Why Care About Cost as Software Engineer?",
-    "headline": "Why Care About Cost as Software Engineer?",
+    "name": "Cost Observability and Guardrails",
+    "headline": "Cost Observability and Guardrails",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/obrepalski.com\/posts\/why-care-about-cost\/",
+    "url" : "https:\/\/obrepalski.com\/posts\/optimising-intro\/",
     "author" : {
       "@type": "Person",
       "name": "Paweł Obrępalski"
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-11-18T00:00:00\u002b00:00",
-    "datePublished": "2024-11-18T00:00:00\u002b00:00",
+    "dateCreated": "2024-02-18T00:00:00\u002b00:00",
+    "datePublished": "2024-02-18T00:00:00\u002b00:00",
     
-    "dateModified": "2024-11-18T00:00:00\u002b00:00",
+    "dateModified": "2024-02-18T00:00:00\u002b00:00",
     
     "keywords": ["series","docs"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "574"
+    "wordCount": "1598"
   }]
   </script>
 
@@ -170,7 +171,7 @@
   
   
   <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
-    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
     
     <div class="flex flex-1 items-center justify-between">
         <nav class="flex space-x-3">
@@ -180,7 +181,7 @@
             
 
         </nav>
-        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
 
             
             
@@ -229,7 +230,7 @@
             
             
             <div
-                class=" flex items-center">
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
                 <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
                     <div class="flex items-center justify-center dark:hidden">
                         
@@ -256,7 +257,7 @@
             
 
         </nav>
-        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
 
             <span></span>
 
@@ -279,7 +280,7 @@
 
             
             
-            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
                 <div class="flex items-center justify-center dark:hidden">
                     
 
@@ -305,7 +306,7 @@
 
         </div>
     </div>
-    <div class="-my-2 md:hidden">
+    <div class="-my-2 -mr-2 md:hidden">
 
         <label id="menu-button" class="block">
             
@@ -393,7 +394,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Why Care About Cost as Software Engineer?
+      Cost Observability and Guardrails
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -438,7 +439,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-11-18T00:00:00&#43;00:00">18 November 2024</time><span class="px-2 text-primary-500">&middot;</span><span>574 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+  <time datetime="2024-02-18T00:00:00&#43;00:00">18 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1598 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
   
 
   
@@ -575,64 +576,176 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Optimising Cloud Services At Scale - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://obrepalski.com/posts/why-care-about-cost/">
+            Part 1: Why Care About Cost as Software Engineer?
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 2: This Article
+    </div>
+    
+    
+
+
+</details>
+
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Cost optimisation has been one of my main focus areas for the past two years, and I’ve heard the same question come up multiple times: “Why should software engineers care about this?” Sure, the obvious answers revolve around maximizing profits and being more cost-effective than the competition. But there are a few less obvious reasons that often get overlooked, and they matter now more than ever. Beyond profits and competitiveness, building cost-conscious systems encourages simplicity and improves long-term maintainability. It also aligns engineers more closely with the broader goals of the business, making their work more impactful.</p>
+          <p>I&rsquo;ve worked on large-scale Recommender Systems (RecSys) for the past few years—first at ByteDance and now at ShareChat, where we serve over 325 million monthly active users, delivering tens of thousands of personalized feeds every second. At this scale, every inefficiency adds up quickly, and optimizing services and workloads becomes essential—not just for reducing costs, but also for overall system maintainability.</p>
+<p>My recent focus has been on running our workloads as efficiently as possible, spanning everything from low-level performance tweaks to leading division-wide initiatives. While some projects seemed minor in isolation, their cumulative impact has been massive. <strong>In 2024 alone, our team&rsquo;s costs reduced by 90%, with the entire RecSys costs dropping by over 75%</strong>. The best part? At the same time user retention from our RecSys improved, proving that cost optimization doesn&rsquo;t have to compromise quality.</p>
+<blockquote>
+<p>&#x1f4dd; <strong>Want to know more?</strong> Check out our <a href="https://sharechat.com/blogs/artificial-intelligence/building-world-class-recommendations-at-lower-costs" target="_blank">official blog</a>!</p></blockquote>
+<p>Over this time I&rsquo;ve learned a lot about cost optimizations - what works effectively and what leads to failure. Successful large-scale efforts depend on getting the fundamentals right, with observability and guardrails being among the most critical elements. Observability helps teams understand their spending and measure optimization impact, while guardrails prevent unintended regressions.</p>
+<hr>
 
 
-<h1 class="relative group">Context 
-    <div id="context" class="anchor"></div>
+<h1 class="relative group">Cost observability 
+    <div id="cost-observability" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#context" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#cost-observability" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
-<p>Over the past decade, companies got used to scaling at any cost, essentially paying people to use their platforms with the hope of capturing the market and figuring out profitability later. Big names like Uber and Airbnb are prime examples. This was driven by several factors:</p>
+<p>As with all engineering problems, you can&rsquo;t optimize what you don&rsquo;t see. This is why observability is the first step toward enabling teams to run their workloads efficiently. Without proper visibility, cost-cutting efforts often feel like guesswork. A well-structured approach ensures that teams have the right tools to track and understand their spending, can measure the impact of changes, and set up guardrails to prevent regressions.</p>
+<p>Understanding what you&rsquo;re actually paying for in the cloud is often more difficult than it seems. Costs don&rsquo;t always correspond directly to the services you interact with daily. Many inefficiencies stem from over-provisioned resources, managed service markups, and unexpected network transfer fees. While major cloud providers offer cost management tools (like <a href="https://cloud.google.com/cost-management" target="_blank">GCP&rsquo;s Cost Management</a>), these alone often aren&rsquo;t enough for a complete picture, especially if you&rsquo;re using multiple clouds or external services.</p>
+<p><strong>Clear Resource Ownership</strong> is fundamental to cost management. Mapping resources to owners can reveal important signals - difficulties in identifying owners often indicate that resources are no longer needed or lack proper maintenance. For resources still in use, clear ownership is crucial not just for cost management but for reliability—trying to track down resource owners during an outage is a nightmare scenario you want to avoid.</p>
+<p><strong>Comprehensive Resource Labeling</strong> adds crucial context to cost data and enhances the utility of cost visualization tools. <a href="https://cloud.google.com/resource-manager/docs/labels-overview" target="_blank">Labels</a> should be baked into your infrastructure processes, ideally enforced through Infrastructure as Code (e.g. Terraform). Based on my experience, the most useful dimensions include Team, Business Unit, Environment (staging/production), and Technology/Component (e.g. BigTable/Scylla).</p>
+<p><strong>Multi-Source Cost Aggregation</strong> is essential as infrastructure bills typically extend beyond products from a single provider. Organizations often use external APIs, deal with licensing costs, or pay for third-party SaaS platforms. Having a unified view across all these sources enables better decision-making and optimization opportunities.</p>
+<p>Finally, <strong>engineers must have ownership over their resource spending and the tools to understand it</strong>. This visibility and accountability should be considered as fundamental as access to performance metrics or logging, enabling teams to make informed decisions about infrastructure choices and identify optimization opportunities.</p>
+<blockquote>
+<p>&#x1f4dd; A few useful tools:</p>
 <ul>
-<li><strong>Cloud computing</strong> made it possible to scale rapidly without worrying about infrastructure</li>
-<li><strong>Rapid technological advancements</strong> opened up new markets</li>
-<li><strong>Era of cheap money</strong> — thanks to near-zero interest rates (a phenomenon called Zero Interest-Rate Policy, or ZIRP)</li>
-</ul>
-<p>With low interest rates, traditional low-risk investments (like bonds) were less attractive, pushing more money into startups. This led to massive hiring sprees, especially during the pandemic, as everyone aimed to be the next big thing.</p>
-<p>But things have changed. While some parts of the industry (like certain LLM startups) still operate with &ldquo;growth at all costs&rdquo; mentality, it’s no longer the default. So what happened, and why should software engineers care?</p>
-<p>As the funding environment has shifted and the era of unlimited growth has given way to a focus on efficiency, companies now prioritize sustainable business practices. On top of that, finding new customers is more difficult as major new channels (e.g. social media) have quickly saturated. Similarly, advertising on platforms with strong targeting capabilities have become much more expensive.</p>
-<p>For engineers, this means a stronger emphasis on building systems that are cost-efficient, reliable, and scalable. The expectations for engineers are evolving, and adapting to this new reality can be a game-changer for your career.</p>
+<li><a href="https://github.com/opencost/opencost" target="_blank">OpenCost</a>/<a href="https://github.com/tailwarden/komiser" target="_blank">Komiser</a> - monitor Kubernetes/Cloud cost</li>
+<li><a href="https://github.com/infracost/infracost" target="_blank">Infracost</a> - estimate cloud cost from Terraform</li>
+<li><a href="https://github.com/apache/superset" target="_blank">Superset</a> - visualise and explore your cost (and much more)</li>
+</ul></blockquote>
+<hr>
 
 
-<h1 class="relative group">What Can You Do to Stand Out? 
-    <div id="what-can-you-do-to-stand-out" class="anchor"></div>
+<h1 class="relative group">Guardrails: Ensuring No Unexpected Regressions 
+    <div id="guardrails-ensuring-no-unexpected-regressions" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-can-you-do-to-stand-out" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#guardrails-ensuring-no-unexpected-regressions" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
-<p>Engineers who can build cost-efficient systems are becoming more valuable, as the industry shifts towards sustainable growth. Here’s how you can set yourself apart:</p>
+<p>Once teams have cost observability in place, they need guardrails to ensure optimizations don&rsquo;t degrade performance or reliability. Beyond real-time monitoring, it&rsquo;s critical to compare cost and performance trends continuously to catch unintended side effects. In future posts, we&rsquo;ll dive deep into implementing comprehensive observability for your services.</p>
+<p>Some key service-level metrics to track:</p>
 <ul>
-<li>
-<p><strong>Become a Product-Oriented Engineer</strong>:
-Learn more about the business side of things. Understanding why your company is successful helps you make better technical decisions.
-Get comfortable with “doing more with less.” Resource constraints can be an opportunity to innovate and find simpler solutions.
-Prefer simpler solutions. “Good enough” systems are usually cheaper to maintain and operate, freeing up your time for more impactful work.</p>
-</li>
-<li>
-<p><strong>Master Cost-Efficient System Design</strong>:
-Cost-efficient systems are often simpler and easier to maintain (as long as you don’t go to extremes trying to squeeze out every penny).
-This reduces the time your team spends on maintenance and on-call, freeing up bandwidth for new projects.</p>
-</li>
-<li>
-<p><strong>Invest in Cross-Disciplinary Skills</strong>:
-Being able to create scalable, cost-efficient systems requires a skill set at the intersection of software engineering, DevOps with business understanding.
-There aren’t many engineers who can effectively balance cost and product trade-offs, so mastering this can be a major career accelerator.</p>
-</li>
+<li>Latencies (p50, p99)</li>
+<li>Error rates (e.g. ratio of 5XX HTTP responses)</li>
+<li>Pod restarts &amp; Out of Memory (OOM) events</li>
+<li>Resource utilization (CPU, memory)</li>
+<li>Runtime metrics - e.g. scheduling latencies and Garbage Collector (GC)</li>
 </ul>
-<p>Embracing cost optimisation isn’t just about saving money.It is about solving problems creatively, building resilient systems, and setting yourself apart in a competitive field. This article series will dive deeper into these aspects, including actionable steps to optimise your services.</p>
+<blockquote>
+<p>&#x1f4a1; If your service runs on a mix of instance types, break down performance metrics by underlying infrastructure to spot anomalies.</p></blockquote>
+<p>In most organisations you will also have several user metrics to track, which should be included in decision-making process - for example user satisfaction, time spent, and retention.</p>
+<p>There is a lot of cost optimisations that can be done without impacting user experience but at some point we will need to decide if given functionality/feature is worth its price. The key is making these trade-offs explicit and intentional. A/B testing has proven to be an invaluable tool allowing us to make data-driven decisions about trade-offs between cost and user experience.</p>
+<blockquote>
+<p>&#x1f4a1; When running A/B tests make sure that relevant engineering/cost metrics are included in the experimentation and that you have a way of displaying your service metrics based on the experimentation variant(s).</p></blockquote>
+<hr>
+
+
+<h1 class="relative group">Getting Started 
+    <div id="getting-started" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#getting-started" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>With observability and guardrails in place, you&rsquo;re ready to begin optimization efforts. While some projects will require significant investment, there are several quick wins you can pursue immediately.</p>
+<p>Start by conducting a thorough review of your current costs and eliminating unused resources. In large environments, it&rsquo;s common to have thousands of resources with a long tail of low-cost items. Focus initially on resources that account for 80-90% of your costs, leaving smaller optimizations for later.</p>
+<p>As a next step take a look at your compute resources, where there are multiple simple steps to avoid spending more than necessary:</p>
+<ul>
+<li>Ensure no idle VMs are running - this is quite common with development VMS and especially ones with attached accelerators (GPU/TPU) as those are quite expensive. In some cases this will be supported out of the box (e.g. for <a href="https://cloud.google.com/vertex-ai/docs/workbench/instances/idle-shutdown" target="_blank">Vertex instances</a>).</li>
+<li>Right size your deployments - review things like <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/" target="_blank">requested</a> cpu/memory and min replicas</li>
+<li>Apply autoscalers on your workloads - load for services will usually vary throughout the day/week/year. In most cases it is as simple as setting <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" target="_blank">Horizontal Pod Autoscaler</a> (HPA) to target a specific CPU utilisation - 60-70% is usually a good starting point.</li>
+</ul>
+<p>Moving on to storage - the most important question is how long your data truly needs to be retained. While some data might need indefinite storage, most becomes obsolete quickly. Most cloud providers offer different <a href="https://cloud.google.com/storage/docs/storage-classes" target="_blank">storage classes</a> with use cases depending on access patterns and required durability. The default class is quite sensible but also the most expensive - even up to 10x compared to archive storage. <a href="https://cloud.google.com/storage/docs/lifecycle" target="_blank">Lifecycle policies</a> are allow you to automatically manage retention and storage class transitions - a common pattern is to transfer data to coldline/archive storage after initial period when it might be accessed more often. Think about down sampling if historical data is required long-term.</p>
+<p>You should be able to avoid network charges by staying within the same <a href="https://cloud.google.com/compute/docs/regions-zones" target="_blank">zone/region</a> as incurring inter-zone/region charges can quickly increase your cost. Consider single-zone deployment options for some of your services and databases. While it is not recommended for crucial production workloads, this approach can significantly reduce costs for non-critical resources. A popular inefficiency is processing data in a different region than where it is stored. While sometimes this is the only viable strategy (e.g. due to regional availability of some features/products) it should generally be avoided.</p>
+<hr>
+
+
+<h1 class="relative group">Common Pitfalls 
+    <div id="common-pitfalls" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#common-pitfalls" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>Cost optimization efforts often appear straightforward until you start measuring their actual impact. Cloud pricing models are complex, with different discounting strategies, provisioning models, and fluctuating rates. This makes it difficult to directly correlate usage reductions to final cost savings. This challenge is particularly evident with compute resources, where pricing depends on factors like provisioning model, availability of spot instances, and committed use discounts.</p>
+<p><strong>Access and Visibility</strong> issues often plague optimization efforts. Restricted access to cost data prevents teams from making informed decisions, while lack of clear cost ownership leads to diffused responsibility. Insufficient tooling for tracking and analyzing costs makes it impossible to measure improvement.</p>
+<p><strong>Process and Culture</strong> problems can derail even well-planned initiatives. Organizations frequently lack standardized processes for resource labeling and cost attribution. Many treat cost optimization as a one-time project rather than an ongoing practice, or fail to prioritize cost efficiency in engineering decisions.</p>
+<p><strong>Technical Oversights</strong> are common, including overlooking managed service markups, ignoring accumulating storage and logging costs, and not accounting for network transfer fees. Teams often underutilize available discounts, over-provision resources &ldquo;just in case&rdquo;,keep development environments running 24/7, or fail to clean up unused resources promptly.</p>
+<hr>
+
+
+<h1 class="relative group">FinOps 
+    <div id="finops" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#finops" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>The challenges of cloud cost management have given rise to FinOps, a framework for cloud financial management. Its core principles align closely with what we&rsquo;ve discussed:</p>
+<ol>
+<li>Data should be accessible and timely</li>
+<li>Decisions are driven by business value</li>
+<li>Everyone takes ownership</li>
+<li>Teams need to collaborate</li>
+<li>A centralized team drives FinOps</li>
+<li>Take advantage of variable cost model</li>
+</ol>
+<blockquote>
+<p>&#x1f4dd; You can learn more about FinOps <a href="https://www.finops.org/framework/" target="_blank">here</a>.</p></blockquote>
+<hr>
+
+
+<h1 class="relative group">Let&rsquo;s Go! 
+    <div id="lets-go" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#lets-go" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>Cost optimization is a vast and complex topic. Even establishing proper observability can be challenging when dealing with multiple cloud providers and services. While technical solutions are important (and often the most exciting), cost efficiency is as much about process and mindset as it is about specific optimizations. It&rsquo;s crucial to understand that this is a continuous journey, not a one-time effort that can be completed and forgotten.</p>
+<p>In upcoming posts in this series, we&rsquo;ll explore fundamental cost optimization techniques and share practical tips based on real-world experience.  We&rsquo;ll start with service-level optimizations before expanding into infrastructure, networking, and beyond. While some content will be specific to technologies I use daily (Go, GCP), most practices will be applicable to the majority of large scale workloads.</p>
+<p>Stay tuned! 🚀</p>
 
           
           
@@ -642,6 +755,34 @@ There aren’t many engineers who can effectively balance cost and product trade
         
 
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Optimising Cloud Services At Scale - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://obrepalski.com/posts/why-care-about-cost/">
+            Part 1: Why Care About Cost as Software Engineer?
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 2: This Article
+    </div>
+    
+    
+
+
+</details>
+
         
 
           
@@ -655,8 +796,8 @@ There aren’t many engineers who can effectively balance cost and product trade
           
         
       <script>
-        var oid = "views_posts\/why-care-about-cost.md"
-        var oid_likes = "likes_posts\/why-care-about-cost.md"
+        var oid = "views_posts\/optimising-intro.md"
+        var oid_likes = "likes_posts\/optimising-intro.md"
       </script>
       
       
@@ -679,15 +820,15 @@ There aren’t many engineers who can effectively balance cost and product trade
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/observability-and-guardrails/">
+            <a class="flex text-right group ml-3" href="/posts/why-care-about-cost/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Cost Observability and Guardrails</span
+                  >Why Care About Cost as Software Engineer?</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-02-18T00:00:00&#43;00:00">18 February 2025</time>
+                    <time datetime="2024-11-18T00:00:00&#43;00:00">18 November 2024</time>
                   
                 </span>
               </span>

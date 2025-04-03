@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Paweł Obrępalski</copyright>
-    <lastBuildDate>Mon, 18 Nov 2024 22:15:22 +0100</lastBuildDate><atom:link href="https://obrepalski.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://obrepalski.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cost Observability and Guardrails</title>
+      <link>https://obrepalski.com/posts/observability-and-guardrails/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://obrepalski.com/posts/observability-and-guardrails/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://obrepalski.com/about/</link>
@@ -24,16 +35,6 @@
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://obrepalski.com/posts/why-care-about-cost/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Cost Observability and Guardrails</title>
-      <link>https://obrepalski.com/posts/optimising-intro/</link>
-      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://obrepalski.com/posts/optimising-intro/</guid>
       <description></description>
       
     </item>

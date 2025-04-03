@@ -1,6 +1,6 @@
 +++
 title = 'Cost Observability and Guardrails'
-date = 2024-02-18
+date = 2025-02-18
 tags = ["series", "docs"]
 #series =  ["Optimising Cloud Services At Scale"]
 #series_order =  2

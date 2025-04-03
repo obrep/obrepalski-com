@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>About &middot; </title>
-  <meta name="title" content="About &middot; " />
+  <title>Go Runtime &middot; </title>
+  <meta name="title" content="Go Runtime &middot; " />
   
   
+  <meta name="keywords" content="series, docs, " />
   
   
-  
-  <link rel="canonical" href="https://obrepalski.com/about/" />
+  <link rel="canonical" href="http://localhost:1313/posts/optimising-go-runtime/" />
   
   
   
@@ -64,43 +64,46 @@
   
   
   
-  <meta property="og:url" content="https://obrepalski.com/about/">
-  <meta property="og:title" content="About">
+  <meta property="og:url" content="http://localhost:1313/posts/optimising-go-runtime/">
+  <meta property="og:title" content="Go Runtime">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2024-11-18T22:15:22+01:00">
-    <meta property="article:modified_time" content="2024-11-18T22:15:22+01:00">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-30T00:00:00+00:00">
+    <meta property="article:tag" content="Series">
+    <meta property="article:tag" content="Docs">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
+  <meta name="twitter:title" content="Go Runtime">
 
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "",
-    "name": "About",
-    "headline": "About",
+    "articleSection": "Posts",
+    "name": "Go Runtime",
+    "headline": "Go Runtime",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/obrepalski.com\/about\/",
+    "url" : "http:\/\/localhost:1313\/posts\/optimising-go-runtime\/",
     "author" : {
       "@type": "Person",
       "name": "Paweł Obrępalski"
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-11-18T22:15:22\u002b01:00",
-    "datePublished": "2024-11-18T22:15:22\u002b01:00",
+    "dateCreated": "2024-01-30T00:00:00\u002b00:00",
+    "datePublished": "2024-01-30T00:00:00\u002b00:00",
     
-    "dateModified": "2024-11-18T22:15:22\u002b01:00",
+    "dateModified": "2024-01-30T00:00:00\u002b00:00",
     
-    
+    "keywords": ["series","docs"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "156"
+    "wordCount": "810"
   }]
   </script>
 
@@ -390,7 +393,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      About
+      Go Runtime
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -408,11 +411,17 @@
 
 
 
+  
 
 
 
 
 
+  
+
+
+
+  
 
 
 
@@ -429,8 +438,16 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
+  <time datetime="2024-01-30T00:00:00&#43;00:00">30 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>810 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+  
 
   
+  
+  <span class="pl-2"><span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Draft
+  </span>
+</span></span>
   
 </div>
 
@@ -564,14 +581,258 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Optimising Cloud Services At Scale - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 4: This Article
+    </div>
+    
+    
+
+
+</details>
+
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Hi! 👋</p>
-<p>I’m Paweł, an experienced software engineer with a solid foundation in machine learning and research background. I specialise in designing and implementing backend ML systems, cloud infrastructure, and scalable solutions.</p>
-<p>My journey began in aerospace research, where I worked on flight simulators and computational fluid dynamics. My bachelor&rsquo;s thesis on turbulence simulation was a turning point for me, as I was able to run my calculations on one of the most powerful supercomputers of the time. I immediately got hooked on programming and large-scale systems, which is what I’ve been working on ever since.</p>
-<p>Over the past few years, I’ve been working on large-scale Recommendation Systems—initially at ByteDance and currently at ShareChat. I’m leading the delivery team that handles the process of providing feed recommendations and balancing different content types.</p>
-<p>Outside of tech, I love most types of physical activity - gym/bike/skiing/sauna. I’m also a lucky owner of amazing Shiba Inu - Gustaw 🐕</p>
+          
+
+<h1 class="relative group">Go Runtime: Brief Overview 
+    <div id="go-runtime-brief-overview" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#go-runtime-brief-overview" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>Before tuning the runtime we will start with a high level overview of two key Go components: scheduler and garbage collector</p>
+
+
+<h2 class="relative group">Garbage collection 
+    <div id="garbage-collection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#garbage-collection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Go is garbage collected language.  -&gt; objects allocated on heap need to be periodically cleaned up
+Memory allocated on stack will automatically be freed up when the function returns
+Can decrease how often GC needs to run by decreasing allocations
+Not always clear if a variable will be allocated on heap
+Check where we allocate most using the heap prole, similarly to cpu prole (link to previous article)</p>
+
+
+<h2 class="relative group">Scheduler 
+    <div id="scheduler" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#scheduler" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h1 class="relative group">Tuning 
+    <div id="tuning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tuning" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>Go has a few parameters that we can tune to achieve better performance.</p>
+
+
+<h2 class="relative group">Tuning Go&rsquo;s Garbage Collector - <code>GOGC</code> and <code>GOMEMLIMIT</code> 
+    <div id="tuning-gos-garbage-collector---gogc-and-gomemlimit" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tuning-gos-garbage-collector---gogc-and-gomemlimit" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Go provides two main knobs for GC tuning:</p>
+<p><strong>GOGC</strong>: Controls the garbage collector&rsquo;s target heap size relative to live heap. The default value of 100 means the heap can grow to 100% larger than the live heap before triggering a collection.</p>
+<p><strong>GOMEMLIMIT</strong> (Go 1.19+): Sets a hard memory limit for the heap. Based on personal experience, disabling GOGC (<code>GOGC=off</code>) and using GOMEMLIMIT alone often provides good results. However, when the live heap approaches the set limit, the application can experience thrashing as the garbage collector works constantly to keep memory usage below the limit. This can lead to significant CPU overhead and reduced performance. Setting GOMEMLIMIT about 20-30% higher than expected peak live heap usage usually provides a good balance.</p>
+<p>Go provides a way to specify the cpu/memory tradeoff that is best for our scenario
+Default behaviour is to wait until heaps grows by 100%
+GOGC (default=100 ) - how much live heap can grow before triggering GC
+GOMEMLIMIT (default=off ) - soft memory limit (from Go 1.19)
+Possible to still OOM with GOMEMLIMIT set (trashing)
+Default settings are quite sensible but adjusting them can give us some extra performance</p>
+<p>Tips:
+Look for runtime.gc* in CPU prole
+Set GODEBUG=gctrace=1 for detailed trace whenever collection happens
+Start with GOMEMLIMIT at ~90% of available memory
+Take into account different price of resources (each core costs close to 7GB memory)</p>
+<p>For a more in-depth guide on Go&rsquo;s GC, refer to the official documentation.</p>
+<p>Adjusting those values is as simple as setting environment variables</p>
+<p><code>shell GOGC=&quot;off&quot; go run . </code></p>
+
+
+<h1 class="relative group">Disable garbage collector 
+    <div id="disable-garbage-collector" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#disable-garbage-collector" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>GOGC=&ldquo;off&rdquo; go run .</p>
+
+
+<h1 class="relative group">Kubernetes configuration example 
+    <div id="kubernetes-configuration-example" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#kubernetes-configuration-example" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">your-app</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">your-image</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GOMAXPROCS</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GOGC</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GOMEMLIMIT</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: <span style="color:#ae81ff">2500</span>
+</span></span></code></pre></div>
+
+<h2 class="relative group">CPU Management with GOMAXPROCS 
+    <div id="cpu-management-with-gomaxprocs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#cpu-management-with-gomaxprocs" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Denes how many threads will be used for simultaneously running service code
+Value too low -&gt; you won’t utilise all resources
+Value too high -&gt; may lead to longer scheduling latency and high tail latencies
+Best place to start is to have GOMAXPROCS equal to number of available cores (which is also the default
+behaviour)
+High values when running on kubernetes as it will default to the # of cores of the underlying instance
+Two possible workarounds:
+Use automaxprocs
+Set the env values based on requests/limits (below) levaraging ability to refer other elds from your
+deployment manifest</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">GOMAXPROCS</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">valueFrom</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resourceFieldRef</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">resource</span>: <span style="color:#ae81ff">requests.cpu</span>
+</span></span></code></pre></div><p>GOMAXPROCS controls the number of operating system threads that can execute Go code simultaneously. While Go usually manages this well automatically, there are cases where adjustment helps:</p>
+<ul>
+<li>
+<p>When running in containerized environments with CPU limits (note that Go will detect the number of cores on the underlying node instead of the container&rsquo;s CPU limit)</p>
+</li>
+<li>
+<p>When dealing with heavy I/O operations</p>
+</li>
+<li>
+<p>When CPU quotas don&rsquo;t align with available cores</p>
+</li>
+<li>
+<p>go test -cpuprofile cpu.pprof will run your tests and write a CPU profile to a file named cpu.pprof.</p>
+</li>
+<li>
+<p>pprof.StartCPUProfile(w) captures a CPU profile to w that covers the time span until pprof.StopCPUProfile() is called.</p>
+</li>
+<li>
+<p>import _ &ldquo;net/http/pprof&rdquo; allows you to request a 30s CPU profile by hitting the GET /debug/pprof/profile?seconds=30 endpoint of the default http server that you can start via http.ListenAndServe(&ldquo;localhost:6060&rdquo;, nil)</p>
+</li>
+<li>
+<p>runtime.SetCPUProfileRate() lets you to control the sampling rate of the CPU profiler. See CPU Profiler Limitations for current limitations.</p>
+</li>
+<li>
+<p>runtime.SetCgoTraceback() can be used to get stack traces into cgo code. benesch/cgosymbolizer has an implementation for Linux and macOS.</p>
+</li>
+</ul>
+<p>file, _ := os.Create(&quot;./cpu.pprof&quot;)
+pprof.StartCPUProfile(file)
+defer pprof.StopCPUProfile()</p>
+<p>Check how much of overall CPU time is used before going deeper into specific functions which seem to take huge % of CPU time</p>
+<p>A few examples of metrics that we can use: <code>go_sched_latencies</code>, <code>go_gc_*</code>, <code>go_memstats*</code></p>
+
+
+<h1 class="relative group">Adjusting 
+    <div id="adjusting" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#adjusting" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+
+<h1 class="relative group">Other tools 
+    <div id="other-tools" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#other-tools" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<ol start="3">
+<li>Load testing - k6 , locust , vegeta
+Especially useful for services with no/minimal downstream dependencies</li>
+</ol>
+
+
+<h1 class="relative group">Further Reading 
+    <div id="further-reading" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#further-reading" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<ul>
+<li><a href="https://tip.golang.org/doc/gc-guide" target="_blank">Go Garbage Collector Guide</a> - Comprehensive guide to Go&rsquo;s garbage collector</li>
+<li>Great resource to read more about different types of profiling in Go and their limitations: <a href="https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md" target="_blank">https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md</a></li>
+<li><a href="https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part1.html" target="_blank">Scheduler</a></li>
+<li><a href="https://github.com/dgryski/go-perfbook" target="_blank">https://github.com/dgryski/go-perfbook</a></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>By correlating Go GC pause times with request latency spikes, we identified memory allocation patterns that guided our gRPC middleware optimizations.</li>
+<li></li>
+</ul>
 
           
           
@@ -581,6 +842,25 @@
         
 
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Optimising Cloud Services At Scale - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 4: This Article
+    </div>
+    
+    
+
+
+</details>
+
         
 
           
@@ -594,8 +874,8 @@
           
         
       <script>
-        var oid = "views_about\/index.md"
-        var oid_likes = "likes_about\/index.md"
+        var oid = "views_posts\/optimising-go-runtime.md"
+        var oid_likes = "likes_posts\/optimising-go-runtime.md"
       </script>
       
       
@@ -606,6 +886,45 @@
   <footer class="pt-8 max-w-prose print:hidden">
 
     
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/why-care-about-cost/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Why Care About Cost as Software Engineer?</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-11-18T00:00:00&#43;00:00">18 November 2024</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
 
     
   </footer>
@@ -664,7 +983,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://obrepalski.com/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div
