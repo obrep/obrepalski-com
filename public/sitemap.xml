@@ -4,13 +4,19 @@
 
   <url>
     <loc>https://obrepalski.com/</loc>
-    <lastmod>2025-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://obrepalski.com/posts/observability-quick-start/</loc>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://obrepalski.com/posts/</loc>
-    <lastmod>2025-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

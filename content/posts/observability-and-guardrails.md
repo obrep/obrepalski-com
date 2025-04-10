@@ -2,8 +2,8 @@
 title = 'Cost Observability and Guardrails'
 date = 2025-02-18
 tags = ["series", "docs"]
-#series =  ["Optimising Cloud Services At Scale"]
-#series_order =  2
+series =  ["Optimising Cloud Services At Scale"]
+series_order =  2
 +++
 
 I've worked on large-scale Recommender Systems (RecSys) for the past few years—first at ByteDance and now at ShareChat, where we serve over 325 million monthly active users, delivering tens of thousands of personalized feeds every second. At this scale, every inefficiency adds up quickly, and optimising services and workloads becomes essential—not just for reducing costs, but also for overall system maintainability.

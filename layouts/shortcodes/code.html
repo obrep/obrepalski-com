@@ -1,0 +1,101 @@
+<!-- Source/credit: https://marcusolsson.dev/how-to-include-code-examples-from-file-with-hugo/  https://www.marcusfolkesson.se/blog/include-code-from-a-file-with-hugo/-->
+
+{{ $language := .Get "language" }}
+
+{{ $source := .Get "source" }}
+
+{{ $options := .Get "options" }}
+
+{{ $id := .Get "id" }}
+
+
+{{ with $source | readFile }}
+
+{{ $snippet := . }}
+
+{{ $lines := split $snippet "\n" }}
+
+{{ $startTag := printf "BEGIN %s" $id }}
+
+{{ $endTag := printf "END %s" $id }}
+
+
+{{ if $id }}
+
+{{ $startl := -1 }}
+
+{{ $endl := -1 }}
+
+
+{{/* Find the lines that ends with the start and end tags. */}}
+
+{{ range $index, $line := $lines }}
+
+{{ if hasSuffix $line $startTag }}
+
+{{ $startl = $index }}
+
+{{ else if hasSuffix $line $endTag }}
+
+{{ $endl = $index }}
+
+{{ end }}
+
+{{ end }}
+
+
+{{/* Let's add some basic assertions. */}}
+
+{{ if lt $startl 0 }}
+
+{{ errorf "Named snippet is missing BEGIN tag" }}
+
+{{ end }}
+
+
+{{ if lt $endl 0 }}
+
+{{ errorf "Named snippet is missing END tag" }}
+
+{{ end }}
+
+
+{{/* Size of the snippet in number of lines. */}}
+
+{{ $snippetLen := sub (sub $endl $startl) 1 }}
+
+
+{{/* Create slice with only the lines between the tags. */}}
+
+{{ $includedLines := first $snippetLen (after (add $startl 1) $lines) }}
+
+
+{{/* Join the lines into the final snippet. */}}
+
+{{ $snippet = delimit $includedLines "\n" }}
+
+{{else}}
+
+
+{{ $snippet = "" }}
+
+{{ range $index, $line := $lines }}
+
+{{ if strings.Contains $line $startTag }}
+
+{{ else if strings.Contains $line $endTag }}
+
+{{ else }}
+
+{{ $snippet = (print $snippet "\n" $line) }}
+
+{{ end }}
+
+{{ end }}
+
+
+{{end}}
+
+{{ highlight (trim $snippet "\n\r") $language $options }}
+
+{{ end }}
