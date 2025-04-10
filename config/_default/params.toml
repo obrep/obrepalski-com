@@ -1,4 +1,20 @@
+smartTOC = true
+enableCodeCopy = true
+enableSearch = true
+
 [homepage]
 layout = 'profile'
 showRecent = true
 
+[article]
+  showHero = true
+  heroStyle = "background" 
+  showSummary = true
+  showTableOfContents = true
+  showRelatedContent = true
+  relatedContentLimit = 3
+
+[list]
+  showCards = true
+  groupByYear = false
+  cardLayout = true 
