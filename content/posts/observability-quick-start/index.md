@@ -63,7 +63,7 @@ Go's built-in [`pprof`](https://pkg.go.dev/runtime/pprof) package makes profilin
 
 Local profiling with `pprof` is invaluable during the development cycle and for investigating specific, reproducible performance issues. It's the go-to tool when you need immediate feedback on the performance impact of code changes or when analyzing behavior that might not be present or easy to isolate in a production environment captured by continuous profiling. Use cases where local profiling shines, and continuous profiling might be less helpful or slower, include: debugging performance regressions introduced in a specific feature branch before merging, interactively testing different optimization ideas for a known bottleneck, or analyzing issues that only manifest in specific development or testing environments.
 
-> :bulb: **Tip:** Enabling the pprof endpoint in production-like environments (perhaps on a specific instance, canary, or behind authentication) can be invaluable for quick troubleshooting of live issues.
+> :bulb: **Tip:** Enabling the `pprof` endpoint in production-like environments (perhaps on a specific instance, canary, or behind authentication) can be invaluable for quick troubleshooting of live issues.
 
 The easiest way to enable this is via a side effect import of `net/http/pprof`.
 
@@ -104,7 +104,7 @@ Flame graphs visualize hierarchical data (like call stacks) effectively. Key thi
 
 The `pprof` UI also offers other views like Top (tabular list of most expensive functions), Graph (call graph visualization - requires Graphviz), and Source (line-by-line annotation).
 
-> :warning: You need `graphviz` installed locally for some visualization options (like the 'Graph' view) within the pprof web UI. You can install it running: `brew install graphviz` or check https://graphviz.org/download/
+> :warning: You need `graphviz` installed locally for some visualization options (like the 'Graph' view) within the web UI. You can install it running: `brew install graphviz` or check https://graphviz.org/download/
 
 
 ## Benchmarking Specific Functions with `go test`
@@ -148,14 +148,14 @@ Benchmarking is invaluable for:
 
 Beyond timing and allocations, Go also offers execution tracing specifically during tests via `go test -trace=trace.out`. This generates a trace file that can be visualized with go tool trace trace.out. The visualization provides a detailed timeline showing goroutine execution, points where goroutines block (e.g., on syscalls, channels, mutexes), and garbage collection events, which is invaluable for diagnosing concurrency issues or unexpected latency within a test run.
 
-:bulb: Tip: You can generate CPU and memory profiles specifically for your benchmark execution using flags like -cpuprofile cpu.prof and -memprofile mem.prof. This lets you use pprof to analyze the performance characteristics of the exact code exercised by the benchmark.
+:bulb: Tip: You can generate CPU and memory profiles specifically for your benchmark execution using flags like `-cpuprofile cpu.prof` and `-memprofile mem.prof`. This lets you use `pprof` to analyze the performance characteristics of the exact code exercised by the benchmark.
 
 
 For more details, see the official Go documentation on writing [benchmarks](https://pkg.go.dev/testing#hdr-Benchmarks) and [tracing](https://go.dev/blog/execution-traces-2024).
 
 ## Continuous Profiling: Performance Insights from Production
 
-While local profiling is great for development and debugging specific issues, **continuous profiling** captures data from your *live production environment* over time. This provides invaluable insights into real-world performance, helps catch regressions early, and allows comparison across deployments.
+While local profiling is great for development and debugging specific issues, **continuous profiling** captures data from your live production environment over time. This provides invaluable insights into real-world performance, helps catch regressions early, and allows comparison across deployments.
 
 Benefits:
 *   Understand performance under actual production load and traffic patterns.
@@ -186,7 +186,7 @@ Most major cloud providers offer profiling tools, though language support varies
 
 ## Profile-Guided Optimization (PGO): Letting Profiles Drive Compilation
 
-Continuous profiling gives us insights into production behavior. What if we could feed those insights back into the compiler itself? Since Go 1.21, the compiler includes built-in support for Profile-Guided Optimization (PGO), which is enabled by default. PGO uses CPU profiles gathered from real-world application runs to make more informed optimization decisions during the build process.
+Continuous profiling gives us insights into production behavior. **What if we could feed those insights back into the compiler?** Since Go 1.21, the compiler includes built-in support for Profile-Guided Optimization (PGO), which is enabled by default. PGO uses CPU profiles gathered from real-world application runs to make more informed optimization decisions during the build process.
 
 The core idea is simple: if the compiler knows which parts of your code are executed most frequently (the "hot paths" identified in a CPU profile), it can apply more aggressive optimizations to those specific areas. A primary example of such optimization is improved inlining – deciding more accurately when replacing a function call with the body of the called function will yield the best performance based on actual usage patterns.
 
@@ -194,11 +194,11 @@ The core idea is simple: if the compiler knows which parts of your code are exec
 
 Leveraging PGO can be straightforward:
 
-1. Obtain a Profile: Collect a representative CPU profile (in the standard pprof format) from your application running under a realistic production or staging load. The continuous profiling tools mentioned earlier (like Google Cloud Profiler, Datadog Continuous Profiler, etc.) are excellent sources for this.
-2. Place the Profile: Copy the collected profile file (e.g., cpu.pprof) into the root directory of your main package (where your main.go file typically resides) and rename it to default.pgo. 
+1. Obtain a Profile: Collect a representative CPU profile (in the standard `pprof` format) from your application running under a realistic production or staging load. The continuous profiling tools mentioned earlier are excellent sources for this.
+2. Place the Profile: Copy the collected profile file (e.g., `cpu.pprof`) into the root directory of your main package (where your main.go file typically resides) and rename it to default.pgo. 
 3. Build: Simply run go build. The Go compiler (1.21+) automatically detects default.pgo in the main package directory and uses it to guide optimizations.
 
-You can also explicitly specify a profile location using the -pgo flag during the build (go build -pgo=/path/to/your/profile.pprof) or disable PGO entirely (go build -pgo=off).
+You can also explicitly specify a profile location using the `-pgo` flag during the build (`go build -pgo=/path/to/your/profile.pprof`) or disable PGO entirely (`go build -pgo=off`).
 
 ### Benefits and Considerations
 
@@ -217,11 +217,11 @@ PGO represents a fascinating link between runtime observability and compile-time
 
 Metrics give you the overview (the "what"), and profiling gives you the deep dive into a single service's internals (the "why" for CPU/memory). But what about understanding the sequence and duration of operations *within* a request's lifecycle? If a specific API endpoint is slow, is it the database query, an external API call, or the internal processing logic that's taking the most time?
 
-This is where **Tracing** comes in. At its core, tracing provides a detailed view of a request or operation's journey through your system by breaking it down into timed steps called `spans`. Even within a single service, tracing can be incredibly useful for pinpointing bottlenecks in complex workflows. For example, you could trace a single incoming request to see how much time was spent in authentication middleware, data fetching, data transformation, and response serialization.
+This is where **Tracing** comes in. At its core, tracing provides a detailed view of a request or operation's journey through your system by breaking it down into timed steps called **spans**. Even within a single service, tracing can be incredibly useful for pinpointing bottlenecks in complex workflows. For example, you could trace a single incoming request to see how much time was spent in authentication middleware, data fetching, data transformation, and response serialization.
 
 Now, consider the microservices environment. If a user request is slow, and it involves calls chaining across *multiple* services, identifying the culprit becomes much harder using only metrics and profiles from individual services. This is the problem **Distributed Tracing** solves. It involves propagating context (like a unique trace ID) with requests as they move between services, allowing you to visualize the entire end-to-end journey, including timing for each service hop and the operations within those services.
 
-Implementing tracing often involves instrumenting your code (manually or automatically) to create these `spans`. [OpenTelemetry](https://opentelemetry.io/) is the emerging standard for observability data, including tracing.
+Implementing tracing often involves instrumenting your code (manually or automatically) to create these **spans**. [OpenTelemetry](https://opentelemetry.io/) is the emerging standard for observability data, including tracing.
 
 **Auto-instrumentation Challenge in Go:** Unlike runtime-interpreted languages like Java or Python, Go compiles directly to native machine code. This makes automatic instrumentation (where an agent modifies code at runtime to inject tracing logic) much harder. While OpenTelemetry provides libraries for *manual* instrumentation in Go, true auto-instrumentation often relies on techniques like:
 *   Compile-time code generation.
@@ -248,7 +248,7 @@ These tools primarily help you understand and optimize your *application code*. 
 
 # Further Reading
 *   [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/) - Learn more about Prometheus.
-*   [Profiling Go Programs](https://go.dev/blog/pprof) - Official Go blog post on pprof.
+*   [Profiling Go Programs](https://go.dev/blog/pprof) - Official Go blog post on `pprof`.
 *   [Go Flamegraph Playground](https://playground.flamegraph.com/playground) - Run simple Go programs and see how their flamegraphs in your browser
 *   [What is continuous profiling?](https://www.cncf.io/blog/2022/05/31/what-is-continuous-profiling/) - CNCF article explaining the concept.
 *   [Profile-guided optimization](https://go.dev/doc/pgo) - Official documentation.

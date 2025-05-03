@@ -122,43 +122,15 @@ A few examples of metrics that we can use: `go_sched_latencies`, `go_gc_*`, `go_
 
 
 
-# Profile Guided Optimisation
-
-Starting Go 1.21, the Go compiler supports Profile-Guided Optimization (PGO). PGO enables additional optimizations on code identified as hot by CPU profiles of production workloads. This is compatible with Datadog Go Continuous Profiler and can be used for production builds.
-
-New feature in Go 1.20, controlled by -pgo ag when building (on by default since 1.21)
-Data from proles is used to optimise the code
-Inlining commonly used code for better performance
-Can quickly get started by pulling prole from your production workload and adding it as default.pgo to
-your project
-Personal experience: mixed
-Low gains
-Signicantly higher build times (10x)
-Caused by rebuilding all dependencies. Can be improved with caching builds in your CI/CD
-Most of our Go services are I/O bound, would expect better results on compute bound services
-PGO should also keep on getting better with each new Go version
-
-
-
 # Other tools
-1. Benchmarking
-   go test -bench .
-   -benchmem -count <n>
-   benchmem ag useful for understanding allocations
-2. Other proles:
-   Goroutine blocking: /debug/pprof/block
-   Mutex contention: /debug/pprof/mutex
 3. Load testing - k6 , locust , vegeta
    Especially useful for services with no/minimal downstream dependencies
-4. Tracing
-   go test -trace=trace.out
-   go tool trace trace.out
-
 
 # Further Reading
 - [Go Garbage Collector Guide](https://tip.golang.org/doc/gc-guide) - Comprehensive guide to Go's garbage collector
 - Great resource to read more about different types of profiling in Go and their limitations: https://github.com/DataDog/go-profiler-notes/blob/main/guide/README.md
 - [Scheduler](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part1.html)
+- https://github.com/dgryski/go-perfbook
 
 
 Notes:

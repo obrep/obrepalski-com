@@ -1,7 +1,5 @@
 # Code for my personal website - [obrepalski.com](https://obrepalski.com/)
 
-Website using Hugo (link) and Blowfish (link) theme
-
 All code examples etc. can be found in `examples/` folder
 
 # Tools
