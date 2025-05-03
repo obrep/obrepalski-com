@@ -626,26 +626,34 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#adding-more-detailed-metrics-with-prometheus">Adding More Detailed Metrics with Prometheus</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#profiling-fundamentals">Profiling Fundamentals</a></li>
-    <li><a href="#local-profiling-with-pprof">Local Profiling with pprof</a></li>
-    <li><a href="#understanding-flame-graphs">Understanding Flame Graphs</a></li>
-    <li><a href="#benchmarking-specific-functions-with-go-test">Benchmarking Specific Functions with <code>go test</code></a></li>
-    <li><a href="#continuous-profiling-performance-insights-from-production">Continuous Profiling: Performance Insights from Production</a>
+    <li><a href="#metrics-your-services-dashboard-gauges">Metrics: Your Service&rsquo;s Dashboard Gauges</a>
       <ul>
-        <li><a href="#google-cloud-profiler-example">Google Cloud Profiler Example</a></li>
-        <li><a href="#other-profiling-solutions">Other Profiling Solutions</a></li>
+        <li><a href="#adding-more-detailed-metrics-with-prometheus">Adding More Detailed Metrics with Prometheus</a></li>
       </ul>
     </li>
-    <li><a href="#profile-guided-optimization-pgo-letting-profiles-drive-compilation">Profile-Guided Optimization (PGO): Letting Profiles Drive Compilation</a>
+    <li><a href="#profiling-finding-the-needles-in-the-haystack">Profiling: Finding the Needles in the Haystack</a>
       <ul>
-        <li><a href="#getting-started-with-pgo">Getting Started with PGO</a></li>
-        <li><a href="#benefits-and-considerations">Benefits and Considerations</a></li>
+        <li><a href="#profiling-fundamentals">Profiling Fundamentals</a></li>
+        <li><a href="#local-profiling-with-pprof">Local Profiling with pprof</a></li>
+        <li><a href="#understanding-flame-graphs">Understanding Flame Graphs</a></li>
+        <li><a href="#benchmarking-specific-functions-with-go-test">Benchmarking Specific Functions with <code>go test</code></a></li>
+        <li><a href="#continuous-profiling-performance-insights-from-production">Continuous Profiling: Performance Insights from Production</a>
+          <ul>
+            <li><a href="#google-cloud-profiler-example">Google Cloud Profiler Example</a></li>
+            <li><a href="#other-profiling-solutions">Other Profiling Solutions</a></li>
+          </ul>
+        </li>
+        <li><a href="#profile-guided-optimization-pgo-letting-profiles-drive-compilation">Profile-Guided Optimization (PGO): Letting Profiles Drive Compilation</a>
+          <ul>
+            <li><a href="#getting-started-with-pgo">Getting Started with PGO</a></li>
+            <li><a href="#benefits-and-considerations">Benefits and Considerations</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li><a href="#a-brief-word-on-tracing">A Brief Word on Tracing</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#further-reading">Further Reading</a></li>
   </ul>
 </nav>
   </div>
@@ -659,26 +667,34 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#adding-more-detailed-metrics-with-prometheus">Adding More Detailed Metrics with Prometheus</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#profiling-fundamentals">Profiling Fundamentals</a></li>
-    <li><a href="#local-profiling-with-pprof">Local Profiling with pprof</a></li>
-    <li><a href="#understanding-flame-graphs">Understanding Flame Graphs</a></li>
-    <li><a href="#benchmarking-specific-functions-with-go-test">Benchmarking Specific Functions with <code>go test</code></a></li>
-    <li><a href="#continuous-profiling-performance-insights-from-production">Continuous Profiling: Performance Insights from Production</a>
+    <li><a href="#metrics-your-services-dashboard-gauges">Metrics: Your Service&rsquo;s Dashboard Gauges</a>
       <ul>
-        <li><a href="#google-cloud-profiler-example">Google Cloud Profiler Example</a></li>
-        <li><a href="#other-profiling-solutions">Other Profiling Solutions</a></li>
+        <li><a href="#adding-more-detailed-metrics-with-prometheus">Adding More Detailed Metrics with Prometheus</a></li>
       </ul>
     </li>
-    <li><a href="#profile-guided-optimization-pgo-letting-profiles-drive-compilation">Profile-Guided Optimization (PGO): Letting Profiles Drive Compilation</a>
+    <li><a href="#profiling-finding-the-needles-in-the-haystack">Profiling: Finding the Needles in the Haystack</a>
       <ul>
-        <li><a href="#getting-started-with-pgo">Getting Started with PGO</a></li>
-        <li><a href="#benefits-and-considerations">Benefits and Considerations</a></li>
+        <li><a href="#profiling-fundamentals">Profiling Fundamentals</a></li>
+        <li><a href="#local-profiling-with-pprof">Local Profiling with pprof</a></li>
+        <li><a href="#understanding-flame-graphs">Understanding Flame Graphs</a></li>
+        <li><a href="#benchmarking-specific-functions-with-go-test">Benchmarking Specific Functions with <code>go test</code></a></li>
+        <li><a href="#continuous-profiling-performance-insights-from-production">Continuous Profiling: Performance Insights from Production</a>
+          <ul>
+            <li><a href="#google-cloud-profiler-example">Google Cloud Profiler Example</a></li>
+            <li><a href="#other-profiling-solutions">Other Profiling Solutions</a></li>
+          </ul>
+        </li>
+        <li><a href="#profile-guided-optimization-pgo-letting-profiles-drive-compilation">Profile-Guided Optimization (PGO): Letting Profiles Drive Compilation</a>
+          <ul>
+            <li><a href="#getting-started-with-pgo">Getting Started with PGO</a></li>
+            <li><a href="#benefits-and-considerations">Benefits and Considerations</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li><a href="#a-brief-word-on-tracing">A Brief Word on Tracing</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#further-reading">Further Reading</a></li>
   </ul>
 </nav>
   </div>
