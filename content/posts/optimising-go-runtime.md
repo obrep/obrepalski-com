@@ -18,6 +18,8 @@ Can decrease how often GC needs to run by decreasing allocations
 Not always clear if a variable will be allocated on heap
 Check where we allocate most using the heap prole, similarly to cpu prole (link to previous article)
 
+Nice visualization: https://pusher.github.io/tricolor-gc-visualization/
+
 ## Scheduler 
 
 

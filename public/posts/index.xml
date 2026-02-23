@@ -2,41 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
-    <link>https://obrepalski.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 Paweł Obrępalski</copyright>
-    <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://obrepalski.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2026 Paweł Obrępalski</copyright>
+    <lastBuildDate>Mon, 23 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Replacing SaaS with an Hour of AI Coding</title>
+      <link>http://localhost:1313/posts/substack-to-kindle/</link>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/substack-to-kindle/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Performance Tuning Quick Start: Metrics, Profiling &amp; Beyond</title>
-      <link>https://obrepalski.com/posts/observability-quick-start/</link>
+      <link>http://localhost:1313/posts/observability-quick-start/</link>
       <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://obrepalski.com/posts/observability-quick-start/</guid>
+      <guid>http://localhost:1313/posts/observability-quick-start/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://obrepalski.com/posts/observability-quick-start/feature.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/observability-quick-start/feature.jpg" />
     </item>
     
     <item>
       <title>Cost Observability and Guardrails</title>
-      <link>https://obrepalski.com/posts/observability-and-guardrails/</link>
+      <link>http://localhost:1313/posts/observability-and-guardrails/</link>
       <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://obrepalski.com/posts/observability-and-guardrails/</guid>
+      <guid>http://localhost:1313/posts/observability-and-guardrails/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://obrepalski.com/posts/observability-and-guardrails/feature.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/observability-and-guardrails/feature.jpg" />
     </item>
     
     <item>
       <title>Why Care About Cost as Software Engineer?</title>
-      <link>https://obrepalski.com/posts/why-care-about-cost/</link>
+      <link>http://localhost:1313/posts/why-care-about-cost/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://obrepalski.com/posts/why-care-about-cost/</guid>
+      <guid>http://localhost:1313/posts/why-care-about-cost/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://obrepalski.com/posts/why-care-about-cost/feature.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/why-care-about-cost/feature.jpg" />
     </item>
     
   </channel>
